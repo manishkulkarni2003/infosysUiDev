@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infosys Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <h1 style="text-align: center;">Hospital Registration</h1>
+
+        <div class="container">
+
+
+            <div class="formContainer">
+                <form onsubmit="handleSubmit()" id="myForm">
+                    <label for="name">Name:</label>
+                    <input style="margin-left: 13px;" type="text" placeholder="Enter Your name" required>
+                    <br>
+                    <label for="Email">Email:</label>
+                    <input style="margin-left: 13px;" type="email" placeholder="Enter Your Email" required>
+                    <br>
+                    <label for="name">Address:</label>
+                    <input type="text" placeholder="Enter Your Address" required>
+                    <br>
+                    <label for="date">Select Date</label>
+                    <input type="date">
+                    <br>
+                    <label for="gender">Choose gender</label>
+                    <input type="radio">Male
+                    <input type="radio">Female
+                    <br>
+
+                    <label for="city">Choose City</label>
+                    <select name="city" id="city">
+                        <option value="hyd">Hyderabad</option>
+                        <option value="hyd">Bengaluru</option>
+                        <option value="hyd">Chennai</option>
+                        <option value="hyd">Mumbai</option>
+                    </select>
+                </form>
+            </div>
+
+        </div>
+        <div class="btn">
+            <button onclick="handleChange()">Submit</button>
+        </div>
+
+    </div>
+</body>
+<script>
+
+    function handleChange() {
+        alert("Form submitted");
+    }
+    function handleSubmit(e) {
+        e.preventDefault()
+    } 
+</script>
+
+
+</html>
