@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.nav li {
+  list-style: none;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+
+}
+
+.Menu li {
+  list-style: none;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+
+
+}
