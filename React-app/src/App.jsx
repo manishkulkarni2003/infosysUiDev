@@ -1,16 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import Navbar from './components/Navbar';
+import TodoList from './components/TodoList';
 
 function App() {
   const Menu =["Roti","Naan","Paneer","dal","biryani","Aloo","Puri"];
   let name ="Manish"
   const [count,setCount] =useState(0);
 
-  const handleChange=()=>{
+  const handleChangeINcrement=()=>{
     setCount(count+1);
+  }
+  const handleChangeDecrement=()=>{
+    setCount(count-1);
   }
   return (
     <>
@@ -19,16 +22,21 @@ function App() {
       <div>Menu:</div>
     
     <div className='Menu'>
-    {Menu.map((menu)=>
-      <li>{menu}</li>
+    {Menu.map((menu,index)=>
+      <li key={index}>{menu}</li>
     )}
     </div>
     
     </div>
     <div className='btn'>
-    <button onClick={handleChange} >Add Quantity</button>
-    <div>{count}</div>
+      <button onClick={handleChangeDecrement}>-</button>
+      <div>{count}</div>
+    <button onClick={handleChangeINcrement} >+</button>
+    <button onClick={()=>{
+      setCount(0);
+    }}>Reset</button>
     </div>
+    <TodoList/>
     </>
   )
 }

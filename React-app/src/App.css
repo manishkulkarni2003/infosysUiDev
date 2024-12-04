@@ -27,3 +27,9 @@
 
 
 }
+
+.todo {
+  display: flex;
+  justify-content: center;
+
+}
