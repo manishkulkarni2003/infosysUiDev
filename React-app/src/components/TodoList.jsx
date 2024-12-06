@@ -23,7 +23,7 @@ const TodoList=()=>{
             <button onClick={handleTodo}>Add</button>
             <ul>
             {todo.map((item)=>{
-                 <li>{item.text}</li>
+                 return <li>{item.text}</li>
             })}
             <button onClick={handleDelete}>Delete</button>
             </ul>
