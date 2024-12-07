@@ -40,8 +40,18 @@ function App() {
   //   getAllRest();
   // }, []);
 
+  
+  const [isDarkMode,setIsDarkMode]=useState(false)
+  
+
+    const toggleTheme=()=>{
+      setIsDarkMode(!isDarkMode)
+    }
+  
   return (
-    <>
+    <div className={isDarkMode?"dark-mode":"light-mode"}>
+      <button className='theme' onClick={toggleTheme}>{isDarkMode?"Switch To Light-Mode":"Switch To Dark MOde"}</button>
+      <h1>{isDarkMode?"Dark Mode Enabled":"Light MOde is Enabled"}</h1>
       <Navbar name={name} /> {/* Sending Props to Child */}
       <div className="app">
         <div>Menu:</div>
@@ -66,7 +76,7 @@ function App() {
       <TodoList />
       <Search/>
       <Api/>
-    </>
+    </div>
   );
 }
 
