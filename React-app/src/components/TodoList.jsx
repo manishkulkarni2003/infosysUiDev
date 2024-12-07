@@ -6,12 +6,12 @@ const TodoList=()=>{
 
     const handleTodo=()=>{
         if(inputValue.trim()!==""){
-            setTodo([...todo,{text:inputValue}]);
+            setTodo([...todo,{id:Date.now(),text:inputValue}]);
             setInputValue("")
         }
     }
-    const handleDelete=()=>{
-        setTodo([]);
+    const handleDelete=(id)=>{
+        setTodo(todo.filter((item)=>item.id!==id));
     }
 
     return(
@@ -23,9 +23,14 @@ const TodoList=()=>{
             <button onClick={handleTodo}>Add</button>
             <ul>
             {todo.map((item)=>{
-                 return <li>{item.text}</li>
+                 return (
+                 <li key={item.id}>{item.text}
+                 <button onClick={()=>handleDelete(item.id)}>Delete</button>
+                 </li>)
+                 
+                 
             })}
-            <button onClick={handleDelete}>Delete</button>
+            
             </ul>
             </div>
         </div>
