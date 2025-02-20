@@ -6,7 +6,8 @@ const TodoList=()=>{
 
     const handleTodo=()=>{
         if(inputValue.trim()!==""){
-            setTodo([...todo,{id:Date.now(),text:inputValue}]);
+            const data=setTodo([...todo,{id:Date.now(),text:inputValue}]);
+            localStorage.setItem(data);
             setInputValue("")
         }
     }

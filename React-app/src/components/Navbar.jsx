@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = (props) => {
     //or we can Destructure this
@@ -7,9 +8,10 @@ const Navbar = (props) => {
         <div>
             <ul className='nav'>
                 <li>HOme</li>
-                <li>About</li>
-                <li>Contact</li>
+                <li><Link to='/tictactoe'>Tictactoe</Link></li>
+                <li><Link to="/todo">Todo</Link></li>
                 <li>Hello:{props.name}</li>
+                
                 {/* <li>Hello:{name}</li> */}
             </ul>
         </div>

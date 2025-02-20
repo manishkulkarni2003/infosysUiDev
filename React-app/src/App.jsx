@@ -5,6 +5,12 @@ import Navbar from './components/Navbar';
 import TodoList from './components/TodoList';
 import Search from './components/Search';
 import Api from './components/Api';
+import Header from './components/Header';
+import { BrowserRouter ,Route,Routes} from 'react-router-dom';
+import Tictactoe from './components/Tictactoe';
+import Classcomponent from './components/Classcomponent';
+
+
 
 function App() {
   const Menu = ["Roti", "Naan", "Paneer", "Dal", "Biryani", "Aloo", "Puri"];
@@ -53,6 +59,8 @@ function App() {
       <button className='theme' onClick={toggleTheme}>{isDarkMode?"Switch To Light-Mode":"Switch To Dark MOde"}</button>
       <h1>{isDarkMode?"Dark Mode Enabled":"Light MOde is Enabled"}</h1>
       <Navbar name={name} /> {/* Sending Props to Child */}
+      
+
       <div className="app">
         <div>Menu:</div>
         <div className="Menu">
@@ -73,9 +81,17 @@ function App() {
           Reset
         </button>
       </div>
-      <TodoList />
-      <Search/>
-      <Api/>
+      <Routes>
+        <Route path="/tictactoe" element={<Tictactoe/>} />
+        <Route path="/todo" element={<TodoList/>} />
+        <Route path="/api" element={<Api/>} />
+        <Route path='/class' element={<Classcomponent/>} />
+
+        </Routes>
+     
+      
+      
+      
     </div>
   );
 }
