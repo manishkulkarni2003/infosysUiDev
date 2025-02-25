@@ -9,6 +9,7 @@ import Header from './components/Header';
 import { BrowserRouter ,Route,Routes} from 'react-router-dom';
 import Tictactoe from './components/Tictactoe';
 import Classcomponent from './components/Classcomponent';
+import Products from './components/Products';
 
 
 
@@ -24,27 +25,7 @@ function App() {
     setCount(count - 1);
   };
 
-  // const getAllRest = async () => {
-  //   try {
-  //     const response = await fetch("https://tiny-blue-vulture-shoe.cyclic.app/burgers", {
-  //       method: 'GET',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //     });
-  //     if (!response.ok) {
-  //       throw new Error(`HTTP error! Status: ${response.status}`);
-  //     }
-  //     const res = await response.json();
-  //     console.log(res);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error.message);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getAllRest();
-  // }, []);
+  
 
   
   const [isDarkMode,setIsDarkMode]=useState(false)
@@ -86,6 +67,7 @@ function App() {
         <Route path="/todo" element={<TodoList/>} />
         <Route path="/api" element={<Api/>} />
         <Route path='/class' element={<Classcomponent/>} />
+        <Route path='/product' element={<Products/>} />
 
         </Routes>
      
