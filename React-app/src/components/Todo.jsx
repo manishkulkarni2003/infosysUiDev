@@ -1,25 +1,35 @@
-import { useState } from "react";
-
+import {useState} from 'react'
 const Todo=()=>{
 
-    const [inputvalue,setInputvalue]=useState("");
+    const [todo,setTodo]=useState([])
+    const[input,setInput]=useState("")
 
-    
+    const handleTodo=()=>{
+        if(input.trim()!==""){
+             const newTodo = { id: Date.now(), text: input };
+      const updatedTodos = [...todo, newTodo];
+      setTodo(updatedTodos);
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+      setInput("");
+        }
+    }
     return(
-        <>
         <div>
-            <form onSubmit={handleTodo}></form>
-            <input type="text" name="" id="" value={inputvalue} onChange={(e)=>{
-                setInputvalue(e.target.value)
-                
-            }} />
-            <button type='submit' >
-                Add Todo
-            </button>
-        </div>
+            <input placeholder="Write Something" value={input}  onChange={(e)=>{
+            setInput(e.target.value)
+            }}/>
+            <button onClick={handleTodo}>Add</button>
+            <ul>
+                {
+                todo.map((item)=>(
+                    <li key={item.id}>{item.text}</li>
+                ))
 
-        </>
+                    
+                }</ul>
+            </div>
     )
+        
 }
 
 export default Todo;

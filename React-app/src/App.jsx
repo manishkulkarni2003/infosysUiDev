@@ -10,6 +10,7 @@ import { BrowserRouter ,Route,Routes} from 'react-router-dom';
 import Tictactoe from './components/Tictactoe';
 import Classcomponent from './components/Classcomponent';
 import Products from './components/Products';
+import Dropdown from './components/Dropdown';
 
 
 
@@ -68,7 +69,8 @@ function App() {
         <Route path="/api" element={<Api/>} />
         <Route path='/class' element={<Classcomponent/>} />
         <Route path='/product' element={<Products/>} />
-
+        <Route path='/search' element={<Search/>} />
+        <Route path='/drop' element={<Dropdown/>} />
         </Routes>
      
       
