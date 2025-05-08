@@ -11,6 +11,9 @@ import Tictactoe from './components/Tictactoe';
 import Classcomponent from './components/Classcomponent';
 import Products from './components/Products';
 import Dropdown from './components/Dropdown';
+import ChildComponentHeader from './components/ChildComponentHeader';
+import Image from './components/Image';
+import './App.css'
 
 
 
@@ -71,6 +74,8 @@ function App() {
         <Route path='/product' element={<Products/>} />
         <Route path='/search' element={<Search/>} />
         <Route path='/drop' element={<Dropdown/>} />
+        <Route path='/props' element={<Header/>} />
+        <Route path='/image' element={<Image/>} />
         </Routes>
      
       
