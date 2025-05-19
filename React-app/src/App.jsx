@@ -14,6 +14,7 @@ import Dropdown from './components/Dropdown';
 import ChildComponentHeader from './components/ChildComponentHeader';
 import Image from './components/Image';
 import './App.css'
+import Quiz from './components/Quiz';
 
 
 
@@ -76,6 +77,7 @@ function App() {
         <Route path='/drop' element={<Dropdown/>} />
         <Route path='/props' element={<Header/>} />
         <Route path='/image' element={<Image/>} />
+        <Route path='/quiz' element={<Quiz/>} />
         </Routes>
      
       
