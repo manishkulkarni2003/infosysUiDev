@@ -38,24 +38,33 @@ const Quiz = () => {
 
 
   return (
-    <div>
+    <div style={{ padding: '20px', maxWidth: '500px', margin: 'auto' }}>
         <div>
             {showScore?(
                 <div>
                     <h2>Your Score:{score}</h2>
+                    {score>0?(<p>Congrats You got it </p>):(<p>Better try next Time</p>)}
                 </div>
             ):(
                 <>
         
       <h1>{currentQuestion.question}</h1>
-    <ul>
+    <ul style={{ listStyleType: 'none', padding: 0 }}>
         {currentQuestion.options.map((option,index)=>(
-            <li key={index} onClick={()=>handleOption(option)}>{option}</li>
+            <li key={index} onClick={()=>handleOption(option)}
+            style={{
+                  padding: '10px',
+                  margin: '5px 0',
+                  border: '1px solid #ccc',
+                  cursor: 'pointer',
+                  backgroundColor:
+                    selectedOption === option ? '#d3e3fd' : 'white',
+                }}>{option}</li>
         ))}
         
         
     </ul>
-    <button onClick={handleNext}>Next</button>
+    <button onClick={handleNext}  style={{ marginTop: '10px' }}>Next</button>
     </>
             )}
 </div>
