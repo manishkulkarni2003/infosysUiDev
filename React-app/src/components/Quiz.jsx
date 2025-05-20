@@ -51,7 +51,7 @@ const Quiz = () => {
       <h1>{currentQuestion.question}</h1>
     <ul style={{ listStyleType: 'none', padding: 0 }}>
         {currentQuestion.options.map((option,index)=>(
-            <li key={index} onClick={()=>handleOption(option)}
+            <li data-testid="ans" key={index} onClick={()=>handleOption(option)}
             style={{
                   padding: '10px',
                   margin: '5px 0',
